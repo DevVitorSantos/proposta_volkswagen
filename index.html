@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de SEO para Volkswagen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: A single-page scrolling application that tells a story: starting with the client's challenge, presenting our solution with interactive tabs for deliverables, visualizing the project with an interactive 2-month timeline, showing impact with a projected growth chart, and ending with a clear investment breakdown and call-to-action. This narrative structure is more engaging and persuasive than a static document, guiding the user logically through the value proposition. -->
+    <!-- Visualization & Content Choices: 1. Entregáveis: Report Info -> Project Deliverables; Goal -> Organize; Viz -> Tabbed interface; Interaction -> Click to switch tabs; Justification -> Breaks down dense information into manageable chunks; Library/Method -> HTML/Tailwind/JS. 2. Cronograma: Report Info -> 2-month duration; Goal -> Organize/Change; Viz -> Horizontal Timeline; Interaction -> Hover reveals details for each month; Justification -> Provides a clear, visual overview of the project plan; Library/Method -> HTML/Tailwind/JS. 3. Benefícios: Report Info -> Key benefits (e.g., visibility); Goal -> Compare/Inform; Viz -> Bar Chart; Interaction -> Tooltips on hover; Justification -> Visually quantifies the expected positive outcome, making it more impactful than text alone; Library/Method -> Chart.js/Canvas. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F2;
+            color: #333333;
+        }
+        .tab-active {
+            border-color: #003366;
+            color: #003366;
+            font-weight: 600;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-[#003366]">
+                Vitor Santos <span class="font-light">| SEO</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#desafio" class="text-gray-600 hover:text-[#003366] transition-colors">O Desafio</a>
+                <a href="#solucao" class="text-gray-600 hover:text-[#003366] transition-colors">Solução</a>
+                <a href="#beneficios" class="text-gray-600 hover:text-[#003366] transition-colors">Benefícios</a>
+                <a href="#investimento" class="text-gray-600 hover:text-[#003366] transition-colors">Investimento</a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-white py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#003366] leading-tight">Proposta de Otimização SEO</h1>
+                <p class="mt-4 text-lg md:text-2xl text-gray-700">Para a nova plataforma de boletos da <span class="font-semibold">Volkswagen</span></p>
+                <p class="mt-2 text-sm text-gray-500">Preparado por Vitor Santos para Iris Barbosa | 02/09/2025</p>
+            </div>
+        </section>
+
+        <section id="desafio" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">O Desafio Principal</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Lançar um novo site para o download de boletos oficiais e garantir que ele não apenas funcione perfeitamente, mas que também seja a <b>primeira opção encontrada pelos clientes no Google</b>. <br/>O objetivo é claro: alcançar e manter as primeiras posições nos resultados de busca, facilitando o acesso ao serviço e fortalecendo a autoridade digital da marca.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao" class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Nossa Solução: Um Projeto "One-Shot" de 2 Meses</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                        Um plano de ação focado e intensivo, projetado para construir uma base sólida de SEO e entregar resultados mensuráveis em um curto espaço de tempo. Dividimos o projeto em três fases claras e objetivas.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-8 border-b border-gray-200">
+                        <nav class="-mb-px flex space-x-6" aria-label="Tabs">
+                            <button id="tab-analise" class="tab-button tab-active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Fase 1: Análise e Estratégia
+                            </button>
+                            <button id="tab-desenvolvimento" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Fase 2: Desenvolvimento e Implementação
+                            </button>
+                            <button id="tab-documentacao" class="tab-button text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                                Fase 3: Documentação e Relatórios
+                            </button>
+                        </nav>
+                    </div>
+                    <div id="content-analise" class="tab-content">
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Auditoria técnica completa do site para identificar e corrigir barreiras de indexação.</li>
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Pesquisa aprofundada de palavras-chave ("boleto Volkswagen", "segunda via boleto VW", etc.).</li>
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Análise da concorrência para mapear e superar as estratégias existentes.</li>
+                        </ul>
+                    </div>
+                    <div id="content-desenvolvimento" class="tab-content hidden">
+                         <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Otimização On-Page: Ajustes em código, meta tags, títulos e URLs para máxima clareza ao Google.</li>
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Otimização de Conteúdo: Sugestão de textos que respondam diretamente às dúvidas dos clientes.</li>
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Estratégia Off-Page: Plano para aquisição de links de qualidade que aumentem a autoridade do site.</li>
+                        </ul>
+                    </div>
+                    <div id="content-documentacao" class="tab-content hidden">
+                         <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Criação de um painel de acompanhamento em tempo real para monitorar as principais métricas de SEO.</li>
+                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Documentação detalhada de todas as ações realizadas e dos resultados alcançados.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Cronograma do Projeto</h3>
+                    <div class="relative max-w-3xl mx-auto">
+                        <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-300"></div>
+                        <div class="relative flex justify-between">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                                    <h4 class="font-semibold text-[#003366]">Mês 1</h4>
+                                    <p class="text-sm text-gray-600">Foco total em Análise, Estratégia e início da Implementação On-Page.</p>
+                                </div>
+                            </div>
+                            <div class="w-1/2 pl-8 text-left">
+                                <div class="p-4 bg-white rounded-lg shadow-md border border-gray-200">
+                                    <h4 class="font-semibold text-[#003366]">Mês 2</h4>
+                                    <p class="text-sm text-gray-600">Implementações avançadas, monitoramento, relatórios e documentação final.</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#003366] rounded-full border-4 border-white"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="beneficios" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800">Benefícios e Ganhos Projetados</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                        O investimento em SEO estratégico se traduz em resultados concretos que vão além do ranking.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                         <ul class="space-y-6 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-[#C0A062] text-2xl mr-4">📈</span>
+                                <div><strong class="text-gray-900">Aumento da Visibilidade Orgânica:</strong> Torne-se a primeira e mais confiável opção para o cliente que precisa baixar um boleto.</div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-[#C0A062] text-2xl mr-4">💰</span>
+                                <div><strong class="text-gray-900">Redução de Custos:</strong> Aumente o tráfego orgânico (gratuito e de alta qualidade), reduzindo a dependência de anúncios pagos.</div>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-[#C0A062] text-2xl mr-4">🏆</span>
+                                <div><strong class="text-gray-900">Credibilidade e Autoridade:</strong> Um bom ranqueamento reforça a confiança e a imagem de uma empresa focada na experiência do cliente.</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="beneficiosChart"></canvas>
+                        </div>
+                        <p class="text-center text-sm text-gray-500 mt-2">Projeção de crescimento da visibilidade orgânica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="investimento" class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                 <div class="max-w-2xl mx-auto text-center bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-800">Investimento no Projeto</h2>
+                    <p class="mt-4 text-gray-600">
+                        Valor de escopo fechado para a execução completa do projeto de 2 meses, cobrindo todas as atividades de análise, desenvolvimento e acompanhamento.
+                    </p>
+                    <div class="my-8">
+                        <span class="text-5xl font-bold text-[#003366]">R$ 12.000,00</span>
+                        <span class="text-gray-500">(doze mil reais)</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h2 class="text-2xl font-bold">Vamos Conversar?</h2>
+            <p class="mt-4 max-w-xl mx-auto">
+                Estou à disposição para negociar e alinhar qualquer ponto. Tenho um grande interesse em contribuir para o sucesso deste projeto.
+            </p>
+            <div class="mt-8">
+                <p class="text-lg font-semibold">Vitor Santos | Consultor de SEO</p>
+                <p class="mt-2 text-gray-300">21 96507-6858 | vitorsantos.seo@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.id.replace('tab-', 'content-');
+                    
+                    tabs.forEach(t => t.classList.remove('tab-active', 'text-gray-500', 'hover:text-gray-700'));
+                    tabs.forEach(t => {
+                        if (t.id !== tab.id) {
+                            t.classList.add('text-gray-500', 'hover:text-gray-700');
+                        }
+                    });
+                    tab.classList.add('tab-active');
+
+                    contents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            const ctx = document.getElementById('beneficiosChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ponto de Partida', 'Mês 1', 'Mês 2'],
+                    datasets: [{
+                        label: 'Visibilidade Orgânica (%)',
+                        data: [5, 45, 80],
+                        backgroundColor: [
+                            'rgba(192, 160, 98, 0.2)',
+                            'rgba(192, 160, 98, 0.6)',
+                            'rgba(0, 51, 102, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(192, 160, 98, 1)',
+                            'rgba(192, 160, 98, 1)',
+                            'rgba(0, 51, 102, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                             ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.dataset.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
