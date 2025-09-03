@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Calm Harmony -->
-    <!-- Application Structure Plan: A single-page scrolling application that tells a story: starting with the client's challenge, presenting our solution with interactive tabs for deliverables, visualizing the project with an interactive 2-month timeline, showing impact with a projected growth chart, and ending with a clear investment breakdown and call-to-action. This narrative structure is more engaging and persuasive than a static document, guiding the user logically through the value proposition. -->
+    <!-- Application Structure Plan: A single-page scrolling application that tells a story: starting with the client's challenge, presenting our solution with interactive tabs for deliverables, visualizing the project with an interactive 2-month timeline, showing impact with a projected growth chart, and ending with a clear investment breakdown and call-to-action. The new 'Detalhes do Projeto' section clarifies project scope (time/hours) before the investment. This narrative structure is more engaging and persuasive than a static document, guiding the user logically through the value proposition. -->
     <!-- Visualization & Content Choices: 1. Entregáveis: Report Info -> Project Deliverables; Goal -> Organize; Viz -> Tabbed interface; Interaction -> Click to switch tabs; Justification -> Breaks down dense information into manageable chunks; Library/Method -> HTML/Tailwind/JS. 2. Cronograma: Report Info -> 2-month duration; Goal -> Organize/Change; Viz -> Horizontal Timeline; Interaction -> Hover reveals details for each month; Justification -> Provides a clear, visual overview of the project plan; Library/Method -> HTML/Tailwind/JS. 3. Benefícios: Report Info -> Key benefits (e.g., visibility); Goal -> Compare/Inform; Viz -> Bar Chart; Interaction -> Tooltips on hover; Justification -> Visually quantifies the expected positive outcome, making it more impactful than text alone; Library/Method -> Chart.js/Canvas. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
@@ -110,7 +110,6 @@
                          <ul class="space-y-4 text-gray-700">
                             <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Otimização On-Page: Ajustes em código, meta tags, títulos e URLs para máxima clareza ao Google.</li>
                             <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Otimização de Conteúdo: Sugestão de textos que respondam diretamente às dúvidas dos clientes.</li>
-                            <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Estratégia Off-Page: Plano para aquisição de links de qualidade que aumentem a autoridade do site.</li>
                         </ul>
                     </div>
                     <div id="content-documentacao" class="tab-content hidden">
@@ -146,37 +145,37 @@
             </div>
         </section>
 
-        <section id="beneficios" class="py-16 md:py-24">
+        <section id="detalhes-projeto" class="py-16 md:py-24 bg-gray-100">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Benefícios e Ganhos Projetados</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">
-                        O investimento em SEO estratégico se traduz em resultados concretos que vão além do ranking.
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Detalhes do Projeto</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        O projeto será executado em um formato "tiro curto", com foco total em resultados e eficiência.
                     </p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <ul class="space-y-6 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-[#C0A062] text-2xl mr-4">📈</span>
-                                <div><strong class="text-gray-900">Aumento da Visibilidade Orgânica:</strong> Torne-se a primeira e mais confiável opção para o cliente que precisa baixar um boleto.</div>
-                            </li>
-                             <li class="flex items-start">
-                                <span class="text-[#C0A062] text-2xl mr-4">💰</span>
-                                <div><strong class="text-gray-900">Redução de Custos:</strong> Aumente o tráfego orgânico (gratuito e de alta qualidade), reduzindo a dependência de anúncios pagos.</div>
-                            </li>
-                             <li class="flex items-start">
-                                <span class="text-[#C0A062] text-2xl mr-4">🏆</span>
-                                <div><strong class="text-gray-900">Credibilidade e Autoridade:</strong> Um bom ranqueamento reforça a confiança e a imagem de uma empresa focada na experiência do cliente.</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="chart-container">
-                            <canvas id="beneficiosChart"></canvas>
+                    <div class="mt-8 grid md:grid-cols-2 gap-8 text-center">
+                        <div>
+                            <p class="text-4xl font-bold text-[#003366]">45</p>
+                            <p class="text-md text-gray-600">Dias</p>
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-2">Projeção de crescimento da visibilidade orgânica.</p>
+                        <div>
+                            <p class="text-4xl font-bold text-[#003366]">60</p>
+                            <p class="text-md text-gray-600">Horas Dedicadas</p>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resumo-atividades" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Resumo das Atividades</h2>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Análise completa do site (técnica e de concorrência) para identificar oportunidades.</li>
+                        <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Otimização On-Page e de Conteúdo para melhorar a relevância e a clareza para o Google.</li>
+                        <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Criação de um painel em tempo real para monitorar as principais métricas de SEO.</li>
+                        <li class="flex items-start"><span class="text-[#003366] font-bold mr-3">✔</span> Documentação detalhada de todas as ações executadas e resultados alcançados.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -186,13 +185,15 @@
                  <div class="max-w-2xl mx-auto text-center bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-lg">
                     <h2 class="text-3xl font-bold text-gray-800">Investimento no Projeto</h2>
                     <p class="mt-4 text-gray-600">
-                        Valor de escopo fechado para a execução completa do projeto de 2 meses, cobrindo todas as atividades de análise, desenvolvimento e acompanhamento.
+                        Valor de escopo fechado para a execução completa do projeto, cobrindo todas as atividades.
                     </p>
                     <div class="my-8">
-                        <span class="text-5xl font-bold text-[#003366]">R$ 12.000,00</span>
-                        <span class="text-gray-500">(doze mil reais)</span>
+                        <span class="text-5xl font-bold text-[#003366]">R$ 9.990,00</span>
+                        <span class="text-gray-500">(nove mil, novecentos e noventa reais)</span>
                     </div>
-                    
+                    <a href="#contato" class="bg-[#C0A062] text-white font-bold px-8 py-3 rounded-md hover:opacity-90 transition-opacity">
+                        Aprovar e Iniciar Projeto
+                    </a>
                 </div>
             </div>
         </section>
